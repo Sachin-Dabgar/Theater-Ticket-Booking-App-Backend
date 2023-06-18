@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 8080;
 
 // Default route
 app.get("/", (req, res) => {
-    res.send("Hello, world!");
+    res.send("<h1>Welcome to Theater Ticket Booking App</h1>");
 });
 
 const start = async () => {
