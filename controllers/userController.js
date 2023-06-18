@@ -7,6 +7,13 @@ const createUser = async (req, res) => {
     // Extract name, email, and role from the request body
     const { name, email, role } = req.body;
 
+    if (!name || !email || !role) {
+        return res.status(400).json({
+            error: "Please provide valid request body",
+            message: "Make sure you pass name, email, and role",
+        });
+    }
+
     try {
         // Check if the user already exists
         const user = await User.findOne({ email });

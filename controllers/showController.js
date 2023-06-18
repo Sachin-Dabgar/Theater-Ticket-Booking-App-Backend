@@ -25,7 +25,7 @@ const createShow = async (req, res) => {
     const { name, screen, totalSeats, showTime, userId } = req.body;
 
     if (!name || !screen || !totalSeats || !showTime || !userId) {
-        return res.status(404).json({
+        return res.status(400).json({
             success: false,
             message:
                 "Provide proper name, screen, totalSeats, showTime, and userId",
